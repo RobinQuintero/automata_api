@@ -40,7 +40,7 @@ class Automata(Grafo):
             paso = Paso(estado, pospalabra, self.pila)
             pasos.append(paso.__dict__)
         else:
-            paso = Paso(estado, pospalabra, self.pila)
+            paso = Paso(estado, pospalabra, self.pila.getItems())
             transicion = estado.buscarTransicion(self.__palabra[pospalabra], self.pila.inspeccionar())
             if transicion is not None:
                 paso.setTransicion(str(transicion))
